@@ -1,0 +1,1 @@
+export default function Page({ params }){ const { locale } = params; return (<section className='container py-12 md:py-16'><h1 className='text-3xl md:text-4xl font-bold tracking-tight'>{locale==='nl'?'Aanmelden':'Sign up'}</h1><p className='mt-2 text-black/70 dark:text-white/70'>{locale==='nl'?'Inschrijving opent binnenkort.':'Registration opens soon.'}</p></section>); }
