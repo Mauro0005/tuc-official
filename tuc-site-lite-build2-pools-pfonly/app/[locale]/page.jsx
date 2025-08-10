@@ -22,7 +22,7 @@ export default function Page({ params }){
     <section className="relative overflow-hidden">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(70%_50%_at_50%_0%,rgba(76,107,87,.20),transparent_60%)]" />
       <div className="container flex min-h-[58vh] flex-col items-center justify-center py-14 md:py-20">
-        <img src="/logo.png" alt="TUC" className="mb-4 h-24 w-auto opacity-80" />
+        <img src="/logo.png" alt="TUC" className="mb-4 h-48 w-auto opacity-80" />
         <h1 className="text-center text-4xl font-extrabold leading-tight tracking-tight md:text-6xl">{t.title}</h1>
         <p className="mt-3 text-center text-lg text-black/80 dark:text-white/80">{t.subtitle}</p>
         <p className="mt-1 text-center text-sm text-black/60 dark:text-white/60">{t.dates}</p>
