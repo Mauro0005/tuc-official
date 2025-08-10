@@ -1,0 +1,14 @@
+
+export default function Page({ params }) {
+  const { locale } = params;
+  return (
+    <section className="container py-12 md:py-16">
+      <h1 className="text-3xl md:text-4xl font-bold tracking-tight">{locale==='nl'?'Media':'Media'}</h1>
+      <p className="mt-2 text-black/70 dark:text-white/70">{locale==='nl'?'Social embeds volgen hier.':'Social embeds will appear here.'}</p>
+      <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="aspect-video rounded-xl border border-black/10 dark:border-white/10 bg-white/5" />
+        <div className="aspect-video rounded-xl border border-black/10 dark:border-white/10 bg-white/5" />
+      </div>
+    </section>
+  );
+}
