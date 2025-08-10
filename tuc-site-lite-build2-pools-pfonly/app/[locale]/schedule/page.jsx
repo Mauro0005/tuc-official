@@ -1,0 +1,1 @@
+import FullSchedule from '../../../components/FullSchedule'; export default function Page({ params }) { const { locale } = params; return (<section className='container py-12 md:py-16'><FullSchedule locale={locale} /></section>); }
