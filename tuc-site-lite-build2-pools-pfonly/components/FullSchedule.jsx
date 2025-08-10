@@ -64,10 +64,10 @@ export default function FullSchedule({ locale='nl' }) {
       { time: '19:00 – 19:45', match: 'QF2 2A vs 3B' },
       { time: '19:45 – 20:30', match: 'SF1 1A vs W-QF1' },
       { time: '20:30 – 21:15', match: 'SF2 1B vs W-QF2' },
-      { time: '21:15 – 22:00', match: t.dunk, event: true },
-      { time: '22:00 – 22:45', match: '3rd place LSF1 vs LSF2' },
-      { time: '22:45 – 23:30', match: 'Final WSF1 vs WSF2' },
-      { time: '23:30 – 00:00', match: locale==='nl' ? 'Prijsuitreiking + MVP' : 'Awards + MVP' },
+      { time: '21:15 – 21:45', match: t.dunk, event: true },
+      { time: '21:45 – 22:30', match: '3rd place LSF1 vs LSF2' },
+      { time: '22:30 – 23:15', match: 'Final WSF1 vs WSF2' },
+      { time: '23:15 – 23:45', match: locale==='nl' ? 'Prijsuitreiking + MVP' : 'Awards + MVP' },
     ],
   }), [t.dunk, locale]);
 
