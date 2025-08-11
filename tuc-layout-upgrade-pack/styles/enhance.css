@@ -1,0 +1,32 @@
+
+/* Visual upgrade – background helpers & card frosting */
+:root {
+  --card-bg: rgba(255,255,255,0.65);
+  --card-border: rgba(0,0,0,0.10);
+}
+html.dark {
+  --card-bg: rgba(255,255,255,0.06);
+  --card-border: rgba(255,255,255,0.10);
+}
+
+.bg-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.glow-ring {
+  box-shadow: 0 0 0 1px rgba(16,185,129,0.25), 0 10px 40px -10px rgba(16,185,129,0.35);
+}
+
+.section-title {
+  @apply text-2xl md:text-3xl font-semibold tracking-tight;
+}
+
+.section-subtle {
+  @apply text-black/70 dark:text-white/70;
+}
+
+/* nicer link hover */
+a:hover { text-decoration: none; }
