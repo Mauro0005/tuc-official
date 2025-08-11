@@ -1,0 +1,213 @@
+
+/* === TUC Design System: tokens & base === */
+:root {
+  /* Base neutrals */
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  --muted: 210 20% 98%;
+  --muted-foreground: 220 12% 42%;
+  --border: 220 13% 90%;
+  --input: 220 13% 90%;
+  --ring: 160 84% 39%;
+  --radius: 0.9rem;
+
+  /* Brand palette */
+  --primary: 160 70% 32%;         /* forest/emerald */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 190 70% 40%;       /* teal/blue-green */
+  --secondary-foreground: 0 0% 98%;
+
+  --accent: 30 95% 55%;           /* warm amber accent */
+  --accent-foreground: 24 100% 12%;
+
+  /* States */
+  --success: 142 72% 35%;
+  --warning: 31 97% 50%;
+  --danger: 0 84% 60%;
+
+  /* Surfaces */
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+}
+
+html.dark {
+  --background: 222 47% 7%;
+  --foreground: 210 40% 98%;
+  --muted: 218 22% 15%;
+  --muted-foreground: 215 20% 65%;
+  --border: 218 22% 20%;
+  --input: 218 22% 20%;
+  --ring: 160 84% 45%;
+
+  --primary: 160 70% 40%;
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 190 70% 45%;
+  --secondary-foreground: 210 40% 98%;
+
+  --accent: 30 92% 58%;
+  --accent-foreground: 24 100% 12%;
+
+  --success: 142 72% 40%;
+  --warning: 31 97% 56%;
+  --danger: 0 72% 55%;
+
+  --card: 222 47% 9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222 47% 6%;
+  --popover-foreground: 210 40% 98%;
+}
+
+/* Base */
+@layer base {
+  * { @apply border-border; }
+  html, body { @apply bg-background text-foreground; }
+}
+
+/* Surfaces & utilities */
+@layer components {
+  .surface { @apply bg-card text-foreground rounded-2xl border; }
+  .surface-soft { @apply bg-card/70 text-foreground rounded-2xl border backdrop-blur-sm; }
+  .elev-1 { box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+  .elev-2 { box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+  .btn-primary { @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium text-primary-foreground bg-primary hover:opacity-90; }
+  .btn-secondary { @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium text-secondary-foreground bg-secondary hover:opacity-95; }
+  .chip { @apply inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm bg-muted; }
+  .muted { color: hsl(var(--muted-foreground)); }
+}
+
+/* Background: gradient + subtle grid */
+:root {
+  --bg-grad-1: radial-gradient(1200px 800px at 10% -10%, hsla(160,70%,85%,0.45), transparent 60%);
+  --bg-grad-2: radial-gradient(1000px 600px at 90% 10%, hsla(190,70%,85%,0.35), transparent 60%);
+  --bg-grid: linear-gradient(to right, rgba(0,0,0,0.06) 1px, transparent 1px),
+             linear-gradient(to bottom, rgba(0,0,0,0.06) 1px, transparent 1px);
+  --bg-grid-size: 24px 24px;
+}
+html.dark {
+  --bg-grad-1: radial-gradient(1200px 800px at 10% -10%, hsla(160,70%,20%,0.45), transparent 60%);
+  --bg-grad-2: radial-gradient(1000px 600px at 90% 10%, hsla(190,70%,20%,0.35), transparent 60%);
+  --bg-grid: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+             linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+  --bg-grid-size: 24px 24px;
+}
+
+.site-background {
+  position: fixed;
+  inset: 0;
+  background:
+    var(--bg-grad-1),
+    var(--bg-grad-2),
+    var(--bg-grid);
+  background-size: auto, auto, var(--bg-grid-size);
+  background-position: center center, center center, top left;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+.body-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* === Light/Dark design tokens (updated) === */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+
+  /* Accent aligned with TUC green style */
+  --primary: 163 72% 29%;
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  /* Stronger borders in LIGHT for better structure */
+  --border: 214.3 31.8% 87%;
+  --input: 214.3 31.8% 87%;
+  --ring: 163 72% 29%;
+
+  --radius: 0.75rem;
+}
+
+.dark {
+  /* Keep existing dark if present; otherwise set good defaults */
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+
+  --card: 222.2 84% 6%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 163 72% 36%;
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 163 72% 36%;
+}
+
+
+/* === Base UI polish: consistent borders & cards === */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .ui-card {
+    @apply rounded-2xl border bg-card shadow-sm;
+  }
+  .ui-panel {
+    @apply rounded-2xl border bg-card/60 backdrop-blur-sm;
+  }
+  .ui-section {
+    @apply rounded-2xl border bg-card p-4 md:p-6 shadow-sm;
+  }
+}
+
+
+@tailwind base; @tailwind components; @tailwind utilities;
+:root{color-scheme:light;--bg:#fff;--fg:#0a0a0a;--card:rgba(0,0,0,.05);--muted:rgba(0,0,0,.6);--accent:#4C6B57}
+.dark{color-scheme:dark;--bg:#000;--fg:#fff;--card:rgba(255,255,255,.08);--muted:rgba(255,255,255,.7);--accent:#4C6B57}
+html,body{background:var(--bg);color:var(--fg);min-height:100%}
+.container{@apply mx-auto max-w-6xl px-4}
+.card{background:var(--card);border:1px solid rgba(0,0,0,.12)}
+.dark .card{border-color:rgba(255,255,255,.12)}
+.muted{color:var(--muted)} .bg-accent{background-color:var(--accent)}
